@@ -1,5 +1,5 @@
-# DReyeVR
-### Welcome to DReyeVR, a VR driving simulator for behavioural and interactions research.
+# eScooterSIM
+### Welcome to eScooterSIM, a VR driving simulator for behavioral and interactions research.
 
 [![Main Figure](Docs/Figures/demo.gif)](https://www.youtube.com/watch?v=yGIPSDOMGpY)
 
@@ -10,7 +10,7 @@
 
 This project extends the [`Carla`](https://github.com/carla-simulator/carla/tree/0.9.13) simulator to add virtual reality integration, a first-person maneuverable ego-vehicle, eye tracking support, and several immersion enhancements.
 
-If you have questions, hopefully our [F.A.Q. wiki page](https://github.com/HARPLab/DReyeVR/wiki/Frequently-Asked-Questions) and [issues page](https://github.com/HARPLab/DReyeVR/issues?q=is%3Aissue+is%3Aclosed) can answer some of them.
+If you have questions, hopefully, our [F.A.Q. wiki page](https://github.com/HARPLab/DReyeVR/wiki/Frequently-Asked-Questions) and [issues page](https://github.com/HARPLab/DReyeVR/issues?q=is%3Aissue+is%3Aclosed) can answer some of them.
 
 **IMPORTANT:** Currently DReyeVR only supports Carla versions: [0.9.13](https://github.com/carla-simulator/carla/tree/0.9.13) with Unreal Engine 4.26
 - (upcoming DReyeVR versions will support the newer Carla versions)
@@ -28,7 +28,7 @@ Fully drivable **virtual reality (VR) ego-vehicle** with [SteamVR integration](h
 - Vehicle controls:
   - Generic keyboard WASD + mouse
   - Support for Logitech Steering wheel with this open source [LogitechWheelPlugin](https://github.com/HARPLab/LogitechWheelPlugin) 
-    - Includes force-feedback with the steering wheel.
+    - Includes force feedback with the steering wheel.
     - We used a [Logitech G923 Racing Wheel & Pedals](https://www.logitechg.com/en-us/products/driving/driving-force-racing-wheel.html)
       - Full list of supported devices can be found [here](https://github.com/HARPLab/LogitechWheelPlugin/blob/master/README.md) though we can't guarantee out-of-box functionality without testing. 
 - Realistic (and parameterizable) rear & side view mirrors (WARNING: very performance intensive)
@@ -127,7 +127,7 @@ If you use our work, please cite the corresponding [paper](https://arxiv.org/abs
 ```
 
 ## Acknowledgements
-
+- This project builds upon and extends the [DReyeVR](https://github.com/HARPLab/DReyeVR.git)
 - This project builds upon and extends the [CARLA simulator](https://carla.org/)
 - This repo includes some code from CARLA: Computer Vision Center (CVC) at the Universitat Autonoma de Barcelona (UAB) & Intel Corporation.
 - This repo includes some code from Hewlett-Packard Development Company, LP. See [nvidia.ph](Tools/Diagnostics/collectl/nvidia.ph). This is a modified diagnostic tool used during development. 
