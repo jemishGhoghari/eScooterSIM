@@ -1,0 +1,44 @@
+Welcome to DReyeVR Codebase!
+============================
+
+This Makefile will help you install the different DReyeVR utilities.
+
+Use the following commands:
+
+    help:
+
+        Display this help message.
+
+    DReyeVR | install:
+
+        Install necessary DReyeVR files to a working compatible CARLA/ScenarioRunner installation.
+        Can specify Carla path with CARLA=/PATH/TO/CARLA
+        Can specify ScenarioRunner path with SR=/PATH/TO/SCENARIO_RUNNER
+
+    check:
+
+        Check a Carla/ScenarioRunner directory for the expected files in Scripts/Paths.
+        Can specify Carla path with CARLA=/PATH/TO/CARLA
+        Can specify ScenarioRunner path with SR=/PATH/TO/SCENARIO_RUNNER
+
+    clean:
+
+        Clean a Carla/ScenarioRunner directory by replacing overwritten files with those in Backups/
+        Also provides the option to hard-clean (use git to reset/clean) if desired.
+        Can specify Carla path with CARLA=/PATH/TO/CARLA
+        Can specify ScenarioRunner path with SR=/PATH/TO/SCENARIO_RUNNER
+
+    rev | r-install:
+
+        Copy files from the Carla/ScenarioRunner directory into DReyeVR. Useful for DReyeVR development.
+        Can specify Carla path with CARLA=/PATH/TO/CARLA
+        Can specify ScenarioRunner path with SR=/PATH/TO/SCENARIO_RUNNER
+
+    test:
+
+        Run the DReyeVR script unit tests
+
+    all:
+
+        Runs the carla installation, then scenario-runner, then the patche(s). 
+        Requires both CARLA=/PATH/TO/CARLA and SR=/PATH/TO/SCENARIO_RUNNER
