@@ -138,6 +138,8 @@ class ADReyeVRPawn : public APawn
     std::tuple<float, float, float> extractValues(FString val); // returns the extracted values from Arduino in form of Tuple
     void updateSerial(); 
 #endif
+    int32 port_num;
+    int32 baud_rate;
     void TickSerial(); // Ticking the Arduino controller
          
     ///////////////////////////////////////////// : Utilities: /////////////////////////////////////////////

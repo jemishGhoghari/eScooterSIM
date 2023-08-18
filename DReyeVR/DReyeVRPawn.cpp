@@ -56,6 +56,10 @@ void ADReyeVRPawn::ReadConfigVariables()
     // wheel hardware
     ReadConfigValue("Hardware", "DeviceIdx", WheelDeviceIdx);
     ReadConfigValue("Hardware", "LogUpdates", bLogLogitechWheel);
+
+    // Arduino Controller
+    ReadConfigValue("Arduino_Controller", "baud_rate", baud_rate);
+    ReadConfigValue("Arduino_Controller", "port_num", port_num);
 }
 
 void ADReyeVRPawn::ConstructCamera()
@@ -353,9 +357,11 @@ void ADReyeVRPawn::DrawFlatHUD(float DeltaSeconds)
 #if USE_ARDUINO_PLUGIN
 void ADReyeVRPawn::connectSerial()
 {
+    // create an Instance of Serial Port class
     USerial* new_serial;
 
-    Serial = new_serial->OpenComPortWithFlowControl(bOpened, 3, 115200);
+    // Open Port for connection
+    Serial = new_serial->OpenComPortWithFlowControl(bOpened, port_num, baud_rate);
 
     if (bOpened) {
         Print_String(TEXT("Port is connected"));
@@ -407,12 +413,12 @@ std::tuple<float, float, float> ADReyeVRPawn::extractValues(FString val) {
 void ADReyeVRPawn::updateSerial() {
     // Reading data from Serial Port in String Format
     FString data = Serial->ReadString(bOpened);
-    // Print_String(data);
+
     // extracting data in float datatype
     float accVal, brakeVal, steeringVal;
     std::tie(accVal, brakeVal, steeringVal) = extractValues(data);
-    // float _temp = normalizeInRange(steeringVal, 1.0, 3.0, -1.0, 1.0);
-    //float Updated_steeringVal = normalizeInRange(steeringVal, 1.0, 3.0, -1.0, 1.0);
+
+    // Assign Values to Vehicle Control Func.
     EgoVehicle->SetSteering(-steeringVal);
     EgoVehicle->SetThrottle(accVal);
     EgoVehicle->SetBrake(1 - brakeVal);
@@ -433,6 +439,11 @@ void ADReyeVRPawn::TickSerial() {
 void ADReyeVRPawn::Print_String(FString stringData) {
     GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Yellow, stringData);
 }
+
+
+/// ========================================== ///
+/// ---------------:Logitech Control:--------- ///
+/// ========================================== ///
 
 void ADReyeVRPawn::InitLogiWheel()
 {
