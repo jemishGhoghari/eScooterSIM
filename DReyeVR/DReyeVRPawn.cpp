@@ -419,9 +419,9 @@ void ADReyeVRPawn::updateSerial() {
     std::tie(accVal, brakeVal, steeringVal) = extractValues(data);
 
     // Assign Values to Vehicle Control Func.
-    EgoVehicle->SetSteering(-steeringVal);
+    EgoVehicle->SetSteering(steeringVal);
     EgoVehicle->SetThrottle(accVal);
-    EgoVehicle->SetBrake(1 - brakeVal);
+    EgoVehicle->SetBrake(brakeVal);
 }
 #endif
 
