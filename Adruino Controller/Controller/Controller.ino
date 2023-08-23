@@ -26,10 +26,7 @@ void loop() {
 
   
   float avg = avgTemp.reading(steerVal);
-
-  // new_steerVal = map(avg, 286.0, 713.0, -1.0, 1.0);
-  // new_accVal = map(accVal, 277.0, 1023.0, 0.0, 1.0);
-  // new_brakeVal = map(steerVal, 0.0, 350.0, 0.0, 1.0);
+  
   new_steerVal = Normalizer(avg, 301, 721, -1, 1);
   new_accVal = Normalizer(accVal, 297, 1023, 0, 1);
   new_brakeVal = Normalizer(brakeVal, 19, 200, 0, 1);
