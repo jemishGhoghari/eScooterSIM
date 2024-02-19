@@ -16,9 +16,10 @@ Fully drivable **virtual reality (VR) Electric Scooter** with [SteamVR integrati
 
 - SteamVR HMD head tracking (orientation & position)
 
-  - We have tested with the following devices:| Device                                      | VR Supported | Eye tracking | OS             |
-    | ------------------------------------------- | ------------ | ------------ | -------------- |
-    | [Varjo XR-3](https://varjo.com/products/xr-3/) | ✅           | ❌           | Windows, Linux |
+  - We have tested with the following devices:
+  - | Device                                      | VR Supported | Eye tracking | OS      |
+    | ------------------------------------------- | ------------ | ------------ | ------- |
+    | [Varjo XR-3](https://varjo.com/products/xr-3/) | ✅           | ❌           | Windows |
   - While we haven't tested other headsets, they should still work for basic VR usage (not eye tracking) if supported by SteamVR.
 - Vehicle controls:
 
